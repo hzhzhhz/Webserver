@@ -6,8 +6,8 @@
 - 基于事件驱动，使用`Reactor`模式 + `EPOLL`的IO多路复用技术。
 - 参考了`muduo`的`one loop per pthread`思想，每个线程维护一个事件循环（`eventloop`）， 
 - 创建了线程池避免线程频繁创建、销毁的开销。
-- 使用unique_ptr,shared_ptr等智能指针控制对象生命周期，同时减小了内存泄漏的风险。
-- 使用function+bind/lambda完成回调。
+- 使用`unique_ptr`,`shared_ptr`等智能指针控制对象生命周期，同时减小了内存泄漏的风险。
+- 使用`function`+`bind/lambda`完成回调。
 - 线程之间的高效通信，使用了`eventfd`实现了线程的唤醒。
 - 用`Webbench` 对服务器进行压测。
 

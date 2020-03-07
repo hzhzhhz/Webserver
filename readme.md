@@ -1,10 +1,10 @@
 ## 简介
-本项目是一个c++编写的多线程Web服务器，借鉴了[Muduo](https://github.com/chenshuo/muduo)的思想；使用了Reactor并发模型，非阻塞IO+线程池；支持http get请求。
+本项目是一个c++编写的多线程Web服务器，使用了Reactor并发模型，非阻塞IO+线程池；支持http get请求。
 
 ## 特点
 
 - 基于事件驱动，使用`Reactor`模式 + `EPOLL`IO多路复用。
-- 参考了`muduo`的`one loop per pthread`思想，每个线程维护一个事件循环（`eventloop`）， 
+- 每个线程维护一个事件循环（`eventloop`）， 
 - 创建了线程池避免线程频繁创建、销毁的开销。
 - 使用`unique_ptr`,`shared_ptr`等智能指针控制对象生命周期，同时减小了内存泄漏的风险。
 - 使用`function`+`bind/lambda`完成回调。

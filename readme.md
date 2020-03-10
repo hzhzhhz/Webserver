@@ -4,7 +4,7 @@
 ## 特点
 
 - 基于事件驱动，使用`Reactor`模式 + `EPOLL`IO多路复用。
-- 创建了线程池，每个线程维护一个事件循环（`eventloop`）。
+- 每个线程维护一个事件循环（`eventloop`）。
 - 使用`unique_ptr`,`shared_ptr`等智能指针控制对象生命周期。
 - 使用`function`+`bind/lambda`完成回调。
 - 使用了`eventfd`实现了线程的唤醒。
